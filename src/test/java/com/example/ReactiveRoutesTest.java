@@ -14,7 +14,8 @@ class ReactiveRoutesTest {
         given()
                 .when()
                 .auth().preemptive().basic("admin", "test")
-                .get("/test")
+                .body("test")
+                .post("/test")
                 .then()
                 .statusCode(200)
                 .body(is("reactive"));
